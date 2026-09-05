@@ -53,10 +53,14 @@ export default function Programs() {
             />
           </div>
           <div className="md:order-1">
-            <h2 className="font-display text-3xl text-navy">
-              domba<span className="text-gold">+</span>
-            </h2>
-            <p className="text-sm font-semibold uppercase text-red">
+            <Image
+              src="/dombamais-azul.png"
+              alt="Domba+"
+              width={600}
+              height={179}
+              className="h-12 w-auto"
+            />
+            <p className="mt-2 text-sm font-semibold uppercase text-red">
               Escola de esportes, arte e cultura
             </p>
             <p className="mt-3 text-charcoal/80">
@@ -66,7 +70,7 @@ export default function Programs() {
             </p>
             <p className="mt-3 font-display text-base leading-snug text-navy">
               Voleibol · Basquetebol · Futsal · Handebol · Ginástica artística
-              · Judô · Kung-fu · Hip-hop · Ballet · Xadrez · Inglês
+              · Judô · Kung-fu · Hip-hop · Ballet · Xadrez · Inglês · Teatro
             </p>
           </div>
         </div>
@@ -81,7 +85,7 @@ export default function Programs() {
               "PDL - Projeto Desenvolvendo Liderança - do 6º ao 9º ano",
               "Fanfarra - 3º ano do Fundamental à 3ª série do Ensino Médio",
               "Preparatório para Olimpíadas do Conhecimento",
-              "Treinamento Esportivo - Ensino Médio",
+              "Treinamento Esportivo - Ensino Médio (Gratuito)",
               "Plantões de dúvidas",
             ].map((i) => (
               <li key={i} className="flex items-start gap-2">
