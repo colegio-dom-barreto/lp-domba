@@ -46,7 +46,6 @@ export default function Hero( { utms }: { utms: { source: string | string[] | un
       {/* fundo: glows coloridos + grid de pontos, dão o clima "moderno" sem depender de imagem */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-skyblue/30 blur-[110px]" />
-        <div className="absolute right-0 top-1/4 h-96 w-96 rounded-full bg-gold/20 blur-[130px]" />
         <div className="absolute -bottom-10 left-1/3 h-72 w-72 rounded-full bg-red/20 blur-[120px]" />
         <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(#fff_1px,transparent_1px)] bg-size-[24px_24px]" />
       </div>
