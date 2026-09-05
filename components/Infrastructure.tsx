@@ -19,12 +19,12 @@ const ITEMS = [
 ];
 
 const PHOTOS = [
-  { src: "/capela.jpg", alt: "Capela do Colégio Dom Barreto" },
-  { src: "/sala-infantil.jpg", alt: "Sala da Educação Infantil" },
-  { src: "/fundamental2-geometria.jpg", alt: "Laboratório e atividades práticas" },
-  { src: "/domba-mais-esportes.jpg", alt: "Ginásio poliesportivo" },
-  { src: "/fundamental1-sala.jpg", alt: "Sala de aula do Ensino Fundamental" },
-  { src: "/ensino-medio-notebook.jpg", alt: "Sala de tecnologia" },
+  { src: "/estrutura/1.png", alt: "Capela do Colégio Dom Barreto" },
+  { src: "/estrutura/2.png", alt: "Sala da Educação Infantil" },
+  { src: "/estrutura/3.png", alt: "Laboratório e atividades práticas" },
+  { src: "/estrutura/4.png", alt: "Ginásio poliesportivo" },
+  { src: "/estrutura/5.png", alt: "Sala de aula do Ensino Fundamental" },
+  { src: "/estrutura/6.png", alt: "Sala de tecnologia" },
 ];
 
 export default function Infrastructure() {

@@ -14,9 +14,9 @@ export default function Methodology() {
     <>
       <section className="bg-offwhite">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-14 md:grid-cols-2 md:items-center">
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
+          <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl">
             <Image
-              src="/sala-infantil.jpg"
+              src="/1.png"
               alt="Aluna da Educação Infantil brincando com blocos de montar"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
@@ -81,7 +81,7 @@ export default function Methodology() {
             </p>
             <div className="mt-6 flex items-start gap-4 border-t border-navy/10 pt-6">
               <Image
-                src="/aluna-torre-rosa.jpg"
+                src="/3.png"
                 alt="Casa da Criança Montessori"
                 width={90}
                 height={90}
@@ -99,9 +99,9 @@ export default function Methodology() {
               </div>
             </div>
           </div>
-          <div className="relative aspect-square w-full overflow-hidden rounded-full sm:aspect-[4/3] sm:rounded-2xl">
+          <div className="relative aspect-square w-full overflow-hidden rounded-full sm:aspect-4/3 sm:rounded-2xl">
             <Image
-              src="/torre-rosa-infantil.jpg"
+              src="/2.png"
               alt="Aluna manuseando material sensorial Montessori (torre rosa)"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"

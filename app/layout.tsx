@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import { WebVitals } from '@/components/WebVitals'
+import { ScrollDepth } from '@/components/ScrollDepth'
 
 // Mesma família usada no corpo, em pesos mais pesados (800/900) para os
 // títulos — é a fonte sans arredondada e bold que aparece nos criativos da
@@ -38,7 +40,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased" suppressHydrationWarning>
         <noscript>
           <iframe
             src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
@@ -48,6 +50,8 @@ export default function RootLayout({
           />
         </noscript>
         {children}
+        <WebVitals />
+        <ScrollDepth />
       </body>
     </html>
   );

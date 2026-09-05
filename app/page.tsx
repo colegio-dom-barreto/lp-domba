@@ -9,13 +9,27 @@ import Testimonials from "@/components/Testimonials";
 import WhatsappButton from "@/components/WhatsappButton";
 import Footer from "@/components/Footer";
 
-export default function Page() {
+export type PageProps = {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+
+export default async function Page({ searchParams }: PageProps) {
+  const params = await searchParams;
+
+  const utms = {
+    source: params.utm_source,
+    medium: params.utm_medium,
+    campaign: params.utm_campaign,
+    content: params.utm_content,
+  };
+
   return (
     <main>
-      <Hero />   
+      <Hero utms={utms} />
       <Methodology />
       <Segments />
-      <Programs />  
+      <Programs />
       <Infrastructure />
       <Testimonials />
       <Footer />

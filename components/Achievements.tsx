@@ -18,7 +18,7 @@ export default function Achievements() {
         </h2>
 
         <div className="mt-8 grid gap-8 md:grid-cols-2 md:items-center">
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
+          <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl">
             <Image
               src="/conquistas-colagem.jpg"
               alt="Alunos e alunas do Colégio Dom Barreto comemorando conquistas em torneios e olimpíadas do conhecimento"

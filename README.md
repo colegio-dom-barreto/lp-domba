@@ -127,3 +127,46 @@ components/     seções da página + formulário
 lib/analytics.ts   helper para eventos do GTM/dataLayer
 apps-script/    código do backend de leads (Google Apps Script)
 ```
+
+## Analytics (GTM + GA4)
+
+O app não carrega gtag.js direto — todo evento é empurrado para
+`window.dataLayer` via `trackEvent()` (`lib/analytics.ts`) e quem decide o que
+fazer com cada evento é o container do GTM (`NEXT_PUBLIC_GTM_ID`, hoje
+`GTM-5C5S23PJ`). Isso evita contagem duplicada e permite trocar/ligar
+propriedades de analytics (GA4, Ads, Meta Pixel) sem mexer no código.
+
+Eventos disparados hoje pelo app:
+
+| Evento                  | Quando dispara                              | Parâmetros                    |
+| ------------------------ | -------------------------------------------- | ------------------------------ |
+| `gerar_lead`             | envio bem-sucedido do formulário             | `segmento`                     |
+| `clique_whatsapp`        | clique em qualquer link/botão do WhatsApp    | `local` (`hero`/`botao_flutuante`) |
+| `clique_agendar_visita`  | clique nos CTAs "Agende sua visita"          | `local` (`header`/`hero`)      |
+| `clique_quero_saber_mais`| clique em "Quero saber mais" por segmento    | `segmento`                     |
+| `clique_rede_social`     | clique nos links do rodapé                   | `rede` (`facebook`/`instagram`/`youtube`) |
+| `scroll_depth`           | usuário rola 25/50/75/100% da página         | `percentual`                   |
+| `web_vitals`             | métricas de Core Web Vitals (LCP, CLS, etc.) | `metric_name`, `metric_value`, `metric_rating`, `metric_id`, `metric_delta` |
+
+### Ligando isso ao GA4 (ainda não configurado — falta o Measurement ID)
+
+Ainda não existe uma propriedade GA4 criada para este projeto. Quando ela
+existir, **não** é necessário mexer no código — configure dentro do próprio
+GTM:
+
+1. Crie a propriedade GA4 no [Google Analytics](https://analytics.google.com)
+   e copie o Measurement ID (`G-XXXXXXX`).
+2. No [GTM](https://tagmanager.google.com), dentro do container
+   `GTM-5C5S23PJ`:
+   - Crie uma tag **Google Analytics: GA4 Configuration** com esse
+     Measurement ID, trigger "All Pages".
+   - Para cada evento da tabela acima, crie um **Custom Event Trigger**
+     (nome do evento = valor da coluna "Evento") e uma tag **GA4 Event**
+     apontando para a tag de configuração, mapeando os parâmetros via
+     variáveis de camada de dados (Data Layer Variable) com o mesmo nome dos
+     parâmetros da tabela.
+3. Publique o container e confira no GA4 → DebugView (ou no próprio Preview
+   do GTM) se os eventos chegam.
+
+Não é necessário nenhuma variável de ambiente nova para isso — o GA4 vive
+inteiramente dentro do container do GTM.

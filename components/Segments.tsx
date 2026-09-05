@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import ChevronBanner from "./ChevronBanner";
+import { trackEvent } from "@/lib/analytics";
 
 function goToForm(segment: string) {
+  trackEvent("clique_quero_saber_mais", { segmento: segment });
   const select = document.getElementById("hero-form-segmento") as HTMLSelectElement | null;
   if (select) {
     select.value = segment;
@@ -43,7 +45,7 @@ function SegmentBlock({
           Quero saber mais
         </button>
       </div>
-      <div className={`relative aspect-[4/3] w-full overflow-hidden rounded-2xl ${reverse ? "md:order-1" : ""}`}>
+      <div className={`relative aspect-4/3 w-full overflow-hidden rounded-2xl ${reverse ? "md:order-1" : ""}`}>
         <Image src={image} alt={imageAlt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
       </div>
     </div>
@@ -58,7 +60,7 @@ export default function Segments() {
         eyebrow="a partir de 2 anos"
         title="Educação Infantil"
         text="O acolhimento é o ponto de partida para que cada criança se sinta segura e confiante em seus primeiros passos na vida escolar. As crianças aprendem com atividades do cotidiano, jogos pedagógicos e materiais sensoriais, desenvolvendo independência e autoconfiança desde cedo."
-        image="/aluna-torre-rosa.jpg"
+        image="/4.png"
         imageAlt="Professora e aluna da Educação Infantil em atividade Montessori"
       />
 
@@ -74,7 +76,7 @@ export default function Segments() {
         eyebrow="anos iniciais"
         title="Ensino Fundamental I"
         text="Do primeiro ao quinto ano, a filosofia montessoriana se mantém por meio de atividades que estimulam a curiosidade, a autonomia e o trabalho em grupo, incentivando a leitura, a escrita e o raciocínio lógico. Tecnologia, música e educação socioemocional fazem parte da grade curricular do infantil ao quinto ano."
-        image="/fundamental1-sala.jpg"
+        image="/5.png"
         imageAlt="Alunos do Ensino Fundamental I em sala de aula"
         reverse
       />
@@ -84,7 +86,7 @@ export default function Segments() {
         eyebrow="anos finais"
         title="Ensino Fundamental II"
         text="Do sexto ao nono ano, a proposta é ampliar o protagonismo do estudante, com projetos interdisciplinares e desafios que estimulam a pesquisa, a criatividade e a resolução de problemas — aproximando a teoria da prática."
-        image="/fundamental2-geometria.jpg"
+        image="/6.png"
         imageAlt="Aluno do Fundamental II em atividade de geometria"
       />
 
@@ -100,7 +102,7 @@ export default function Segments() {
         eyebrow=""
         title="Ensino Médio"
         text="O aprendizado se torna cada vez mais direcionado à vida adulta e aos objetivos individuais de cada estudante. Projetos e disciplinas eletivas valorizam a investigação, a argumentação e o pensamento crítico, preparando para os vestibulares, a vida acadêmica e o mercado de trabalho."
-        image="/ensino-medio-notebook.jpg"
+        image="/7.png"
         imageAlt="Alunos do Ensino Médio estudando juntos com notebook"
         reverse
       />

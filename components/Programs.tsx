@@ -31,9 +31,9 @@ export default function Programs() {
               Vagas limitadas — consulte disponibilidade por faixa etária
             </p>
           </div>
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
+          <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl">
             <Image
-              src="/periodo-integral.jpg"
+              src="/8.png"
               alt="Crianças brincando no período integral do Colégio Dom Barreto"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
@@ -43,9 +43,9 @@ export default function Programs() {
         </div>
 
         <div className="mt-14 grid gap-8 md:grid-cols-2 md:items-center">
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl md:order-2">
+          <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl md:order-2">
             <Image
-              src="/domba-mais-esportes.jpg"
+              src="/9.png"
               alt="Aula de esportes do Domba+"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
