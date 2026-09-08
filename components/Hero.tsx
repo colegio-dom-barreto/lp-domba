@@ -15,17 +15,14 @@ const TRUST_ITEMS = [
 
 const HERO_IMAGES = [
   {
-    src: "/capa/1.png",
+    src: "/capa/bia-lp.png",
     alt: "Ex-aluna do Colégio Dom Barreto segurando uma foto de quando era criança na escola",
   },
   {
-    src: "/capa/2.png",
+    src: "/capa/pedro-lp.png",
     alt: "Ex-aluno do Colégio Dom Barreto, Rafael, segurando uma foto de quando era criança na escola",
   },
-  {
-    src: "/capa/3.png",
-    alt: "Ex-aluno do Colégio Dom Barreto, Pedro, segurando uma foto de quando era criança na escola",
-  },
+  
 ];
 
 const HERO_IMAGE_INTERVAL_MS = 4000;

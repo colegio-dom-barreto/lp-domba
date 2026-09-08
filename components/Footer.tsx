@@ -21,7 +21,7 @@ export default function Footer() {
           <p className="mt-1">
             matriculas@colegiodombarreto.com.br · (19) 3232-4366
           </p>
-          <p className="mt-1">Matrículas: (19) 3113-6780</p>
+          <p className="mt-1">Matrículas: (19) 3113-6780 (Whatsapp)</p>
         </div>
         <div className="flex gap-4 text-sm">
           <a
