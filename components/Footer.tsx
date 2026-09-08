@@ -19,7 +19,7 @@ export default function Footer() {
         <div className="text-sm">
           <p>Av. da Saudade, 705 – Ponte Preta – Campinas/SP – CEP 13041-670</p>
           <p className="mt-1">
-            matriculas@colegiodombarreto.com.br · (19) 3232-4366
+            matricula@colegiodombarreto.com.br · (19) 3232-4366
           </p>
           <p className="mt-1">Matrículas: (19) 3113-6780 (Whatsapp)</p>
         </div>
