@@ -216,7 +216,7 @@ export default function SegmentSelector() {
         <div
           role="tablist"
           aria-label="Etapas de ensino"
-          className="-mx-1 flex justify-center gap-2 overflow-x-auto rounded-full bg-white p-1.5 shadow-sm ring-1 ring-navy/10 sm:justify-start"
+          className="-mx-1 flex justify-start gap-2 overflow-x-auto rounded-full bg-white p-1.5 shadow-sm ring-1 ring-navy/10"
         >
           {SEGMENTS.map((seg, i) => (
             <button

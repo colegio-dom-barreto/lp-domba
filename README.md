@@ -87,6 +87,7 @@ Isso leva ~10 minutos e já resolve "onde os leads caem" sem precisar de CRM.
 2. Em vercel.com → New Project → importe o repositório.
 3. Em Settings → Environment Variables, adicione:
    - `NEXT_PUBLIC_GTM_ID`
+   - `NEXT_PUBLIC_GA_ID`
    - `NEXT_PUBLIC_LEADS_ENDPOINT`
 4. Deploy.
 
@@ -133,11 +134,16 @@ apps-script/    código do backend de leads (Google Apps Script)
 
 ## Analytics (GTM + GA4)
 
-O app não carrega gtag.js direto — todo evento é empurrado para
-`window.dataLayer` via `trackEvent()` (`lib/analytics.ts`) e quem decide o que
-fazer com cada evento é o container do GTM (`NEXT_PUBLIC_GTM_ID`, hoje
-`GTM-5C5S23PJ`). Isso evita contagem duplicada e permite trocar/ligar
-propriedades de analytics (GA4, Ads, Meta Pixel) sem mexer no código.
+O GTM continua carregado normalmente (`NEXT_PUBLIC_GTM_ID`, hoje
+`GTM-5C5S23PJ`) para tags de Ads/Meta Pixel/etc configuradas na própria
+interface do GTM.
+
+Além disso, o GA4 é carregado **direto no código** (`app/layout.tsx`), via
+gtag.js, usando `NEXT_PUBLIC_GA_ID` (hoje `G-YV3RKBVVKP`) — não depende de
+nenhuma tag manual dentro do GTM. Todo evento continua sendo empurrado para
+`window.dataLayer` via `trackEvent()` (`lib/analytics.ts`), que agora também
+chama `window.gtag('event', ...)` diretamente, então os eventos abaixo já
+chegam automaticamente no GA4.
 
 Eventos disparados hoje pelo app:
 
@@ -151,25 +157,22 @@ Eventos disparados hoje pelo app:
 | `scroll_depth`           | usuário rola 25/50/75/100% da página         | `percentual`                   |
 | `web_vitals`             | métricas de Core Web Vitals (LCP, CLS, etc.) | `metric_name`, `metric_value`, `metric_rating`, `metric_id`, `metric_delta` |
 
-### Ligando isso ao GA4 (ainda não configurado — falta o Measurement ID)
+### GA4 (já configurado direto no código)
 
-Ainda não existe uma propriedade GA4 criada para este projeto. Quando ela
-existir, **não** é necessário mexer no código — configure dentro do próprio
-GTM:
+A propriedade GA4 já existe e está ligada via `NEXT_PUBLIC_GA_ID`
+(`G-YV3RKBVVKP`). `app/layout.tsx` carrega o `gtag.js` e chama
+`gtag('config', ...)` automaticamente quando essa env var está definida — não
+precisa criar nenhuma tag de configuração no GTM pra isso.
 
-1. Crie a propriedade GA4 no [Google Analytics](https://analytics.google.com)
-   e copie o Measurement ID (`G-XXXXXXX`).
-2. No [GTM](https://tagmanager.google.com), dentro do container
-   `GTM-5C5S23PJ`:
-   - Crie uma tag **Google Analytics: GA4 Configuration** com esse
-     Measurement ID, trigger "All Pages".
-   - Para cada evento da tabela acima, crie um **Custom Event Trigger**
-     (nome do evento = valor da coluna "Evento") e uma tag **GA4 Event**
-     apontando para a tag de configuração, mapeando os parâmetros via
-     variáveis de camada de dados (Data Layer Variable) com o mesmo nome dos
-     parâmetros da tabela.
-3. Publique o container e confira no GA4 → DebugView (ou no próprio Preview
-   do GTM) se os eventos chegam.
+Todos os eventos da tabela acima já chegam no GA4 automaticamente, porque
+`trackEvent()` chama `window.gtag('event', nomeDoEvento, payload)` além de
+empurrar pro `dataLayer` (que continua alimentando o GTM normalmente, sem
+mudanças nas tags de lá).
 
-Não é necessário nenhuma variável de ambiente nova para isso — o GA4 vive
-inteiramente dentro do container do GTM.
+Pra conferir: abra o site com `?debug_mode=true` ou instale a extensão
+[GA Debugger](https://chrome.google.com/webstore/detail/google-analytics-debugger/jnkmfdileelhofjcijamephohjechhna)
+e veja os eventos chegando em GA4 → Admin → DebugView.
+
+Nas variáveis de ambiente do Vercel (Settings → Environment Variables),
+adicione também `NEXT_PUBLIC_GA_ID`, junto com `NEXT_PUBLIC_GTM_ID` e
+`NEXT_PUBLIC_LEADS_ENDPOINT`.

@@ -1,6 +1,7 @@
 declare global {
   interface Window {
     dataLayer: Record<string, unknown>[];
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -8,6 +9,7 @@ export function trackEvent(eventName: string, payload: Record<string, unknown> =
   if (typeof window === "undefined") return;
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({ event: eventName, ...payload });
+  window.gtag?.("event", eventName, payload);
 }
 
 export interface WebVitalsMetric {
