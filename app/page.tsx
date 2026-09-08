@@ -3,7 +3,7 @@ import CampaignAds from "@/components/CampaignAds";
 import Methodology from "@/components/Methodology";
 import Segments from "@/components/Segments";
 import Infrastructure from "@/components/Infrastructure";
-import Achievements from "@/components/Achievements";
+import Montessori from "@/components/Montessori";
 import Programs from "@/components/Programs";
 import Testimonials from "@/components/Testimonials";
 import WhatsappButton from "@/components/WhatsappButton";
@@ -28,9 +28,10 @@ export default async function Page({ searchParams }: PageProps) {
     <main>
       <Hero utms={utms} />
       <Methodology />
+      <Infrastructure />
+      <Montessori />
       <Segments />
       <Programs />
-      <Infrastructure />
       <Testimonials />
       <Footer />
       <WhatsappButton />

@@ -1,5 +1,8 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { BookOpen, HeartHandshake, Trophy, Users, Church } from "lucide-react";
+import { BookOpen, HeartHandshake, Trophy, Users, Church, ChevronLeft, ChevronRight } from "lucide-react";
 
 const BULLETS = [
   { icon: BookOpen, text: "Excelência acadêmica com filosofia montessoriana" },
@@ -9,20 +12,89 @@ const BULLETS = [
   { icon: Church, text: "Valores cristãos e espiritualidade" },
 ];
 
+const PHOTOS = [
+  { src: "/1.png", alt: "Aluna da Educação Infantil brincando com blocos de montar" },
+ { src: "/2.png", alt: "Aluna da Educação Infantil brincando com blocos de montar" },
+  { src: "/3.png", alt: "Aluna da Educação Infantil brincando com blocos de montar" },
+];
+
+function MethodologyCarousel() {
+  const [index, setIndex] = useState(0);
+  const hasMultiple = PHOTOS.length > 1;
+
+  useEffect(() => {
+    if (!hasMultiple) return;
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % PHOTOS.length);
+    }, 4000);
+    return () => clearInterval(id);
+  }, [hasMultiple]);
+
+  const goTo = (i: number) => setIndex((i + PHOTOS.length) % PHOTOS.length);
+
+  return (
+    <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl">
+      {PHOTOS.map((photo, i) => (
+        <div
+          key={photo.src}
+          className="absolute inset-0 transition-opacity duration-700 ease-in-out"
+          style={{ opacity: i === index ? 1 : 0 }}
+          aria-hidden={i !== index}
+        >
+          <Image
+            src={photo.src}
+            alt={photo.alt}
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="object-cover"
+            priority={i === 0}
+          />
+        </div>
+      ))}
+
+      {hasMultiple && (
+        <>
+          <button
+            type="button"
+            onClick={() => goTo(index - 1)}
+            aria-label="Foto anterior"
+            className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/80 text-navy shadow transition hover:bg-white"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+          <button
+            type="button"
+            onClick={() => goTo(index + 1)}
+            aria-label="Próxima foto"
+            className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/80 text-navy shadow transition hover:bg-white"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
+          <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2">
+            {PHOTOS.map((photo, i) => (
+              <button
+                key={photo.src}
+                type="button"
+                onClick={() => goTo(i)}
+                aria-label={`Ir para foto ${i + 1}`}
+                className={`h-2 w-2 rounded-full transition ${
+                  i === index ? "bg-white" : "bg-white/50"
+                }`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
 export default function Methodology() {
   return (
     <>
       <section className="bg-offwhite">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-14 md:grid-cols-2 md:items-center">
-          <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl">
-            <Image
-              src="/1.png"
-              alt="Aluna da Educação Infantil brincando com blocos de montar"
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover"
-            />
-          </div>
+          <MethodologyCarousel />
           <div>
             <h2 className="font-display text-3xl leading-tight text-navy sm:text-4xl">
               Educar com passos firmes para a vida
@@ -52,61 +124,6 @@ export default function Methodology() {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-14 md:grid-cols-2 md:items-center">
-          <div>
-            <h2 className="font-display text-3xl text-navy sm:text-4xl">
-              Filosofia Montessori
-            </h2>
-            <p className="mt-4 text-charcoal/80">
-              O método Montessori é uma abordagem educacional centrada no
-              aluno, que valoriza a autonomia, a liberdade com
-              responsabilidade e o aprendizado prático. Criado por Maria
-              Montessori, ele parte do princípio de que cada criança tem seu
-              próprio ritmo e estilo de aprendizagem.
-            </p>
-            <p className="mt-3 text-charcoal/80">
-              O ambiente é preparado para estimular a curiosidade, a
-              criatividade e o desenvolvimento integral — intelectual,
-              social, emocional, físico e espiritual.
-            </p>
-            <p className="mt-3 text-charcoal/80">
-              As raízes Montessori estão presentes no Colégio Dom Barreto
-              desde 1960, sustentadas por décadas de experiência na formação
-              de gerações.
-            </p>
-            <div className="mt-6 flex items-start gap-4 border-t border-navy/10 pt-6">
-              <Image
-                src="/3.png"
-                alt="Casa da Criança Montessori"
-                width={90}
-                height={90}
-                className="h-20 w-20 shrink-0 rounded-full object-cover"
-              />
-              <div>
-                <h3 className="font-display text-lg text-navy">
-                  Casa da criança Montessori
-                </h3>
-                <p className="text-sm text-charcoal/75">
-                  Em escala compatível com a criança, proporciona experiências
-                  cotidianas da vida prática, estimulando o cuidado consigo,
-                  com o ambiente e com o próximo.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="relative aspect-square w-full overflow-hidden rounded-full sm:aspect-4/3 sm:rounded-2xl">
-            <Image
-              src="/2.png"
-              alt="Aluna manuseando material sensorial Montessori (torre rosa)"
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover"
-            />
           </div>
         </div>
       </section>

@@ -14,7 +14,7 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-5C5S23PJ";
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
 export const metadata: Metadata = {
   title: "Matrículas Abertas 2027 | Colégio Dom Barreto",
@@ -39,6 +39,9 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','${GTM_ID}');
           `}
         </Script>
+
+
+
       </head>
       <body className="font-sans antialiased" suppressHydrationWarning>
         <noscript>
