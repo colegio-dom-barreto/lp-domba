@@ -100,7 +100,7 @@ const SEGMENTS: Segment[] = [
       "Educação financeira e empreendedorismo",
       "Educação ambiental e vida prática",
     ],
-    image: "/13.png",
+    image: "/14.png",
     imageAlt: "Alunos do Ensino Médio estudando juntos com notebook",
   },
 ];

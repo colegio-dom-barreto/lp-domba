@@ -33,7 +33,7 @@ export default function Programs() {
           </div>
           <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl">
             <Image
-              src="/8.png"
+              src="/14.png"
               alt="Crianças brincando no período integral do Colégio Dom Barreto"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"

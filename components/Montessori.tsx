@@ -57,7 +57,7 @@ export default function Montessori() {
           </div>
           <div className="relative aspect-square w-full overflow-hidden rounded-full sm:aspect-4/3 sm:rounded-2xl">
             <Image
-              src="/2.png"
+              src="/15.png"
               alt="Aluna manuseando material sensorial Montessori (torre rosa)"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
