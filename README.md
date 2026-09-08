@@ -1,5 +1,7 @@
 # LP Matrículas — Dom Barreto (Next.js)
 
+
+
 Reconstrução da página `/matriculas-abertas-2` fora do WordPress, para rodar
 100% estática em CDN (Vercel) e aguentar tráfego de campanha sem depender do
 PHP/banco do WordPress.
