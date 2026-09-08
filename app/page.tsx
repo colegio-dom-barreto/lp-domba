@@ -1,7 +1,8 @@
+import { Suspense } from "react";
 import Hero from "@/components/Hero";
 import CampaignAds from "@/components/CampaignAds";
 import Methodology from "@/components/Methodology";
-import Segments from "@/components/Segments";
+import SegmentSelector from "@/components/SegmentSelector";
 import Infrastructure from "@/components/Infrastructure";
 import Montessori from "@/components/Montessori";
 import Programs from "@/components/Programs";
@@ -29,9 +30,10 @@ export default async function Page({ searchParams }: PageProps) {
       <Hero utms={utms} />
       <Methodology />
       <Infrastructure />
+      <Suspense fallback={null}>
+        <SegmentSelector />
+      </Suspense>
       <Montessori />
-      <Segments />
-      <Programs />
       <Testimonials />
       <Footer />
       <WhatsappButton />
