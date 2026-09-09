@@ -22,15 +22,11 @@ const HERO_IMAGES = [
     src: "/capa/pedro-lp.png",
     alt: "Ex-aluno do Colégio Dom Barreto, Rafael, segurando uma foto de quando era criança na escola",
   },
-<<<<<<< HEAD
-
-=======
     {
     src: "/rafael-LP.png",
     alt: "Ex-aluno do Colégio Dom Barreto, Rafael, segurando uma foto de quando era criança na escola",
   },
   
->>>>>>> 03470e46c90deac334f34c3951a2b653e15b384f
 ];
 
 const HERO_IMAGE_INTERVAL_MS = 4000;
