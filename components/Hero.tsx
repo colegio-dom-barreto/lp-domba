@@ -22,13 +22,13 @@ const HERO_IMAGES = [
     src: "/capa/pedro-lp.png",
     alt: "Ex-aluno do Colégio Dom Barreto, Rafael, segurando uma foto de quando era criança na escola",
   },
-  
+
 ];
 
 const HERO_IMAGE_INTERVAL_MS = 4000;
 
 
-export default function Hero( { utms }: { utms: { source: string | string[] | undefined; medium: string | string[] | undefined; campaign: string | string[] | undefined; content: string | string[] | undefined } }) {
+export default function Hero({ utms }: { utms: { source: string | string[] | undefined; medium: string | string[] | undefined; campaign: string | string[] | undefined; content: string | string[] | undefined } }) {
   const [activeImage, setActiveImage] = useState(0);
 
   useEffect(() => {
@@ -61,7 +61,7 @@ export default function Hero( { utms }: { utms: { source: string | string[] | un
           onClick={() => trackEvent("clique_agendar_visita", { local: "header" })}
           className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-bold text-navy shadow-lg shadow-gold/20 transition-transform hover:scale-105 sm:block"
         >
-          Agende sua visita
+          Receba mais informações
         </a>
       </div>
 
@@ -91,8 +91,9 @@ export default function Hero( { utms }: { utms: { source: string | string[] | un
               onClick={() => trackEvent("clique_agendar_visita", { local: "hero" })}
               className="rounded-full bg-gold px-7 py-3.5 font-bold text-navy shadow-lg shadow-gold/25 transition-transform hover:scale-[1.03]"
             >
-              Agende sua visita
+              Receba mais informações
             </a>
+            {/*
             <a
               href="https://wa.me/551931136780?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20Matr%C3%ADculas%20e%20quero%20agendar%20uma%20visita."
               target="_blank"
@@ -110,6 +111,7 @@ export default function Hero( { utms }: { utms: { source: string | string[] | un
               </svg>
               Falar no WhatsApp
             </a>
+            */}
           </div>
 
           <dl className="mt-9 flex flex-wrap gap-x-6 gap-y-3 border-t border-white/10 pt-6">
@@ -134,9 +136,8 @@ export default function Hero( { utms }: { utms: { source: string | string[] | un
                 alt={image.alt}
                 fill
                 sizes="(min-width: 768px) 40vw, 80vw"
-                className={`object-contain object-bottom drop-shadow-2xl transition-opacity duration-1000 ease-in-out ${
-                  index === activeImage ? "opacity-100" : "opacity-0"
-                }`}
+                className={`object-contain object-bottom drop-shadow-2xl transition-opacity duration-1000 ease-in-out ${index === activeImage ? "opacity-100" : "opacity-0"
+                  }`}
                 priority={index === 0}
               />
             ))}
@@ -152,8 +153,8 @@ export default function Hero( { utms }: { utms: { source: string | string[] | un
               </div>
             </div>
              */}
- 
-  
+
+
           </div>
         </div>
       </div>
@@ -165,10 +166,10 @@ export default function Hero( { utms }: { utms: { source: string | string[] | un
       >
         <div className="rounded-3xl bg-white p-6 shadow-2xl sm:p-8">
           <h2 className="font-display text-2xl text-navy sm:text-3xl">
-            Agende sua visita
+            Receba mais informações
           </h2>
           <p className="mt-1 text-sm text-charcoal/70">
-            Preencha e a Central de Matrículas entra em contato com você.
+            Preencha seus dados e a Central de Matrículas entrará em contato com você.
           </p>
           <div className="mt-5">
             <LeadForm id="hero-form" defaultSegment="infantil" utms={utms} />
