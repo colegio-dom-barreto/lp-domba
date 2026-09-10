@@ -13,9 +13,13 @@ const BULLETS = [
 ];
 
 const PHOTOS = [
-  { src: "/1.png", alt: "Aluna da Educação Infantil brincando com blocos de montar" },
- { src: "/2.png", alt: "Aluna da Educação Infantil brincando com blocos de montar" },
-  { src: "/3.png", alt: "Aluna da Educação Infantil brincando com blocos de montar" },
+  { src: "/16.png", alt: "Aluna da Educação Infantil brincando com blocos de montar" },
+  { src: "/17.png", alt: "Aluna da Educação Infantil brincando com blocos de montar" },
+  { src: "/18.png", alt: "Aluna da Educação Infantil brincando com blocos de montar" },
+  { src: "/19.png", alt: "Aluna da Educação Infantil brincando com blocos de montar" },
+  { src: "/20.png", alt: "Aluna da Educação Infantil brincando com blocos de montar" },
+  { src: "/21.png", alt: "Aluna da Educação Infantil brincando com blocos de montar" },
+  { src: "/22.png", alt: "Aluna da Educação Infantil brincando com blocos de montar" },
 ];
 
 function MethodologyCarousel() {
@@ -77,9 +81,8 @@ function MethodologyCarousel() {
                 type="button"
                 onClick={() => goTo(i)}
                 aria-label={`Ir para foto ${i + 1}`}
-                className={`h-2 w-2 rounded-full transition ${
-                  i === index ? "bg-white" : "bg-white/50"
-                }`}
+                className={`h-2 w-2 rounded-full transition ${i === index ? "bg-white" : "bg-white/50"
+                  }`}
               />
             ))}
           </div>
@@ -97,15 +100,10 @@ export default function Methodology() {
           <MethodologyCarousel />
           <div>
             <h2 className="font-display text-3xl leading-tight text-navy sm:text-4xl">
-              Educar com passos firmes para a vida
+              Do Domba para o que vier.
             </h2>
             <p className="mt-4 text-charcoal/80">
-              No Colégio Dom Barreto, cada etapa da jornada escolar é
-              planejada para que o aluno cresça, aprenda e se descubra, desde
-              os primeiros passos na educação até os desafios da vida adulta.
-              Mais do que ensinar, formamos para a vida, estimulando
-              pensamento crítico, sensibilidade e a capacidade de transformar
-              o mundo de forma ética e sustentável.
+              O que o seu filho leva daqui não cabe no histórico escolar. São os valores que guiam quando a decisão é difícil. A curiosidade que não para quando a aula acaba. A amizade que dura décadas. O conhecimento que dá segurança para enfrentar os desafios não só do vestibular, mas da vida. A confiança de quem cresceu num lugar onde foi visto, respeitado e desafiado. No Dom Barreto, formação não é entregue — é construída. Desde os 2 anos até o Ensino Médio.
             </p>
             <p className="mt-3 text-charcoal/80">
               Aqui, cada estudante é reconhecido em sua individualidade e

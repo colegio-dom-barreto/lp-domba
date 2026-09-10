@@ -65,7 +65,7 @@ export default function Hero({ utms }: { utms: { source: string | string[] | und
           onClick={() => trackEvent("clique_agendar_visita", { local: "header" })}
           className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-bold text-navy shadow-lg shadow-gold/20 transition-transform hover:scale-105 sm:block"
         >
-          Receba mais informações
+          Comece a história do seu filho aqui 
         </a>
       </div>
 
@@ -84,9 +84,7 @@ export default function Hero({ utms }: { utms: { source: string | string[] | und
           </h1>
 
           <p className="mt-5 max-w-md text-base text-white/80 sm:text-lg">
-            Da Educação Infantil ao Ensino Médio, formamos alunos prontos
-            para qualquer desafio — com 73 anos de tradição e Método
-            Montessori, em Campinas.
+            Há 73 anos, o Domba forma pessoas que sabem onde querem chegar, e que chegam lá com integridade e valores. Da Educação Infantil ao Ensino Médio, em Campinas.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -95,7 +93,7 @@ export default function Hero({ utms }: { utms: { source: string | string[] | und
               onClick={() => trackEvent("clique_agendar_visita", { local: "hero" })}
               className="rounded-full bg-gold px-7 py-3.5 font-bold text-navy shadow-lg shadow-gold/25 transition-transform hover:scale-[1.03]"
             >
-              Receba mais informações
+              Comece a história do seu filho aqui 
             </a>
             {/*
             <a
@@ -170,10 +168,10 @@ export default function Hero({ utms }: { utms: { source: string | string[] | und
       >
         <div className="rounded-3xl bg-white p-6 shadow-2xl sm:p-8">
           <h2 className="font-display text-2xl text-navy sm:text-3xl">
-            Receba mais informações
+            Comece a história do seu filho aqui 
           </h2>
           <p className="mt-1 text-sm text-charcoal/70">
-            Preencha seus dados e a Central de Matrículas entrará em contato com você.
+            Preencha seus dados e nossa equipe entrará em contato para tirar suas dúvidas e agendar uma visita.
           </p>
           <div className="mt-5">
             <LeadForm id="hero-form" defaultSegment="infantil" utms={utms} />

@@ -19,22 +19,9 @@ export default function Montessori() {
               Filosofia Montessori
             </h2>
             <p className="mt-4 text-charcoal/80">
-              O método Montessori é uma abordagem educacional centrada no
-              aluno, que valoriza a autonomia, a liberdade com
-              responsabilidade e o aprendizado prático. Criado por Maria
-              Montessori, ele parte do princípio de que cada criança tem seu
-              próprio ritmo e estilo de aprendizagem.
+              Toda criança tem seu próprio tempo. O método Montessori existe para respeitar isso — e o Dom Barreto pratica desde 1960. Aqui, o ambiente é preparado para que a criança descubra, erre, tente de novo e cresça com confiança. O professor não apenas ensina: orienta. A criança participa ativamente da própria rotina, dentro de limites que fazem sentido. Nossa proposta integra desenvolvimento intelectual, social, emocional, físico e espiritual.
             </p>
-            <p className="mt-3 text-charcoal/80">
-              O ambiente é preparado para estimular a curiosidade, a
-              criatividade e o desenvolvimento integral — intelectual,
-              social, emocional, físico e espiritual.
-            </p>
-            <p className="mt-3 text-charcoal/80">
-              As raízes Montessori estão presentes no Colégio Dom Barreto
-              desde 1960, sustentadas por décadas de experiência na formação
-              de gerações.
-            </p>
+
             <div className="mt-6 flex items-start gap-4 border-t border-navy/10 pt-6">
               <Image
                 src="/3.png"
@@ -48,9 +35,7 @@ export default function Montessori() {
                   Casa da criança Montessori
                 </h3>
                 <p className="text-sm text-charcoal/75">
-                  Em escala compatível com a criança, proporciona experiências
-                  cotidianas da vida prática, estimulando o cuidado consigo,
-                  com o ambiente e com o próximo.
+                  Em escala compatível com a criança, proporciona experiências cotidianas da vida prática, estimulando o cuidado consigo, com o ambiente e com o próximo.
                 </p>
               </div>
             </div>

@@ -26,7 +26,7 @@ const SEGMENTS: Segment[] = [
     label: "Infantil",
     eyebrow: "a partir de 2 anos",
     title: "Educação Infantil",
-    text: "O acolhimento é o ponto de partida para que cada criança se sinta segura e confiante em seus primeiros passos na vida escolar. As crianças aprendem com atividades do cotidiano, jogos pedagógicos e materiais sensoriais, desenvolvendo independência e autoconfiança desde cedo.",
+    text: "Um primeiro passo seguro, acolhedor e cheio de descobertas. Na Educação Infantil, a criança aprende com as mãos, com os olhos, com o corpo — e se descobre capaz antes mesmo de saber que está aprendendo. Em um ambiente preparado para a exploração, o professor Montessori observa, orienta e confia no ritmo de cada um. É aqui que começa a confiança que dura a vida toda.",
     image: "/11.png",
     imageAlt: "Professora e aluna da Educação Infantil em atividade Montessori",
   },
@@ -37,7 +37,7 @@ const SEGMENTS: Segment[] = [
     label: "Fund. I",
     eyebrow: "anos iniciais",
     title: "Ensino Fundamental I",
-    text: "Do primeiro ao quinto ano, a filosofia montessoriana se mantém por meio de atividades que estimulam a curiosidade, a autonomia e o trabalho em grupo, incentivando a leitura, a escrita e o raciocínio lógico. Tecnologia, música e educação socioemocional fazem parte da grade curricular do infantil ao quinto ano.",
+    text: "A curiosidade que nasceu na Educação Infantil começa a virar conhecimento. Ler, escrever, calcular, resolver — cada conteúdo é apresentado de forma concreta, ligado ao que a criança já viveu. O pensamento se estrutura. A autonomia se consolida. E a criança descobre que aprender pode — e deve — ser prazeroso. Tecnologia, música e educação socioemocional fazem parte da grade curricular do infantil ao quinto ano.",
     image: "/12.png",
     imageAlt: "Alunos do Ensino Fundamental I em sala de aula",
   },
@@ -48,7 +48,7 @@ const SEGMENTS: Segment[] = [
     label: "Fund. II",
     eyebrow: "anos finais",
     title: "Ensino Fundamental II",
-    text: "Do sexto ao nono ano, a proposta é ampliar o protagonismo do estudante, com projetos interdisciplinares e desafios que estimulam a pesquisa, a criatividade e a resolução de problemas — aproximando a teoria da prática.",
+    text: "A fase mais complexa da formação tem um protagonista: o próprio aluno. É aqui que a teoria encontra o mundo real — em projetos que exigem pesquisa, debate e decisão. O jovem começa a descobrir quem ele é, o que defende e de onde vem sua força. Não por acaso, é também onde os valores se tornam escolhas.",
     image: "/10.png",
     imageAlt: "Aluno do Fundamental II em atividade de geometria",
   },
@@ -59,17 +59,25 @@ const SEGMENTS: Segment[] = [
     label: "Médio",
     eyebrow: "",
     title: "Ensino Médio",
-    text: "O aprendizado se torna cada vez mais direcionado à vida adulta e aos objetivos individuais de cada estudante. Projetos e disciplinas eletivas valorizam a investigação, a argumentação e o pensamento crítico, preparando para os vestibulares, a vida acadêmica e o mercado de trabalho.",
+    text: "A formação se completa. O horizonte se abre. O jovem que chegou criança sai pronto — para a profissão que escolher, para o caminho que traçar, para o mundo que ainda está descobrindo. Nossa carga horária estendida dá espaço para a excelência acadêmica, complementada pelas disciplinas eletivas e treino esportivo gratuito. Mais do que preparar para o vestibular, o Domba prepara para a vida e para o que vier.",
     image: "/7.png",
+    tags: [
+
+      "Carga horária estendida – 36h (1ª e 2ª séries), 40h (3ª série)",
+      "Treino esportivo gratuito para alunos que representam o colégio.",
+      "Livros didáticos subsidiados para a 1ª série – consulte condições",
+      "Aprovações de destaque nos vestibulares"
+
+    ],
     imageAlt: "Alunos do Ensino Médio estudando juntos com notebook",
   },
-    {
+  {
     slug: "dombamais",
     aliases: ["dombamais", "domba", "domba-mais"],
     label: "Domba Mais",
     eyebrow: "",
     title: "Domba Mais",
-    text: "Atividades no contraturno escolar, com professores especialistas em cada modalidade, participação em torneios, amistosos e festivais.",
+    text: "Mais que atividades, vínculos e descobertas de novos interesses. No contraturno do Domba+, o aluno descobre talentos que a sala de aula não mostraria. Com professores especialistas em cada modalidade e participação em torneios, festivais e apresentações, o Domba+ faz da escola um lugar onde o filho quer estar.",
     tags: [
       "Voleibol",
       "Basquetebol",
@@ -87,18 +95,37 @@ const SEGMENTS: Segment[] = [
     image: "/9.png",
     imageAlt: "Alunos do Ensino Médio estudando juntos com notebook",
   },
-    {
+  {
     slug: "integral",
     aliases: ["integral", "ensinointegral", "ei", "ensinointegral"],
     label: "Integral",
     eyebrow: "",
     title: "Período Integral",
-    text: "Espaço exclusivo com 2 casas (Infantil ao 1º ano e 2º ao 5º ano), unidas por um agradável quintal sensorial, com horta e pomar.",
+    text: "Com duas casas organizadas por faixa etária, quintal sensorial, horta e pomar, no Integral do Domba a criança se sente em casa e em família. Com uma programação diversificada para complementar sua formação: inglês, maker, esportes, educação financeira, ambiental e vida prática — tudo com a qualidade e o olhar de quem conhece cada aluno pelo nome.",
     tags: [
-      "Inglês Maker",
+      "Inglês",
+      "Maker",
       "Atividades esportivas",
       "Educação financeira e empreendedorismo",
       "Educação ambiental e vida prática",
+    ],
+    image: "/14.png",
+    imageAlt: "Alunos do Ensino Médio estudando juntos com notebook",
+  },
+  {
+    slug: "extra-curriculares",
+    aliases: ["extra-curriculares", "atividades-extras", "ae"],
+    label: "Extra Curriculares",
+    eyebrow: "",
+    title: "Extra Curriculares Gratuitos",
+    text: "Espaço exclusivo com 2 casas (Infantil ao 1º ano e 2º ao 5º ano), unidas por um agradável quintal sensorial, com horta e pomar.",
+    tags: [
+      "Coral - 2º ao 5º ano do Fundamental",
+      "PDL - Projeto Desenvolvendo Liderança - do 6º ao 9º ano",
+      "Fanfarra - 3º ano do Fundamental à 3ª série do Ensino Médio",
+      "Preparatório para Olimpíadas do Conhecimento",
+      "Treinamento Esportivo - Ensino Médio",
+      "Plantões de dúvidas",
     ],
     image: "/14.png",
     imageAlt: "Alunos do Ensino Médio estudando juntos com notebook",
@@ -209,7 +236,7 @@ export default function SegmentSelector() {
             Etapas de ensino
           </span>
           <h2 className="font-display mt-2 text-3xl text-navy sm:text-4xl">
-            Conheça nossos segmentos de ensino
+            Uma jornada completa — dos 2 anos ao vestibular
           </h2>
         </div>
 

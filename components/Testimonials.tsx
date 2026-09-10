@@ -15,7 +15,7 @@ const TESTIMONIALS = [
     quote:
       "O que o Dom Barreto trouxe para minha trajetória foram os valores, a resiliência do estudo e a disciplina.",
     author: "Lucas Mello",
-    role: "Ex-aluno",
+    role: "Ex-aluno - ",
   },
 ];
 
