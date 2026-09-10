@@ -80,7 +80,7 @@ export default function Hero({ utms }: { utms: { source: string | string[] | und
           <h1 className="font-display mt-4 text-4xl leading-[1.05] text-white sm:text-5xl lg:text-[3.4rem]">
             Fortes por dentro.
             <br />
-            <span className="text-gold">Livres</span> para ir longe.
+            Livres para ir longe.
           </h1>
 
           <p className="mt-5 max-w-md text-base text-white/80 sm:text-lg">

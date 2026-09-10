@@ -127,7 +127,7 @@ const SEGMENTS: Segment[] = [
       "Treinamento Esportivo - Ensino Médio",
       "Plantões de dúvidas",
     ],
-    image: "/14.png",
+    image: "/extra.png",
     imageAlt: "Alunos do Ensino Médio estudando juntos com notebook",
   },
 ];

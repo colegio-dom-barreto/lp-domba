@@ -166,7 +166,7 @@ export default function LeadForm({
       >
         <p className="font-display text-xl text-navy">Recebemos seu contato.</p>
         <p className="mt-1 text-sm text-charcoal/80">
-          Nossa Central de Matrículas fala com você em breve para agendar a visita.
+          Nossa Central de Matrículas entrará em contato com você em breve para agendar a visita.
         </p>
       </div>
     );
