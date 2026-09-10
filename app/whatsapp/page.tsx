@@ -39,8 +39,8 @@ export default async function Page({ searchParams }: PageProps) {
           <Image
             src="/LOGO-maisHORIZONTAL.png"
             alt="Colégio Dom Barreto"
-            width={220}
-            height={107}
+            width={430}
+            height={117}
             className="h-20 w-auto"
             priority
           />

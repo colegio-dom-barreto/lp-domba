@@ -117,8 +117,8 @@ const SEGMENTS: Segment[] = [
     aliases: ["extra-curriculares", "atividades-extras", "ae"],
     label: "Extra Curriculares",
     eyebrow: "",
-    title: "Extra Curriculares Gratuitos",
-    text: "Espaço exclusivo com 2 casas (Infantil ao 1º ano e 2º ao 5º ano), unidas por um agradável quintal sensorial, com horta e pomar.",
+    title: "Extra Curriculares Gratuitas",
+    text: "Complementando a formação do aluno o Domba oferece uma variedade de atividades gratuitas (consulte disponibilidade de vagas).",
     tags: [
       "Coral - 2º ao 5º ano do Fundamental",
       "PDL - Projeto Desenvolvendo Liderança - do 6º ao 9º ano",

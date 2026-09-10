@@ -43,9 +43,9 @@ export default function Hero({ utms }: { utms: { source: string | string[] | und
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-navy-deep">
+    <section className="relative bg-navy-deep">
       {/* fundo: glows coloridos + grid de pontos, dão o clima "moderno" sem depender de imagem */}
-      <div aria-hidden className="pointer-events-none absolute inset-0">
+      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-skyblue/30 blur-[110px]" />
         <div className="absolute -bottom-10 left-1/3 h-72 w-72 rounded-full bg-red/20 blur-[120px]" />
         <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(#fff_1px,transparent_1px)] bg-size-[24px_24px]" />
@@ -55,8 +55,8 @@ export default function Hero({ utms }: { utms: { source: string | string[] | und
         <Image
           src="/LOGO-maisHORIZONTAL.png"
           alt="Colégio Dom Barreto"
-          width={220}
-          height={107}
+          width={430}
+          height={117}
           className="h-20 w-auto sm:h-20"
           priority
         />
@@ -65,7 +65,7 @@ export default function Hero({ utms }: { utms: { source: string | string[] | und
           onClick={() => trackEvent("clique_agendar_visita", { local: "header" })}
           className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-bold text-navy shadow-lg shadow-gold/20 transition-transform hover:scale-105 sm:block"
         >
-          Comece a história do seu filho aqui 
+          Quero conhecer o Domba
         </a>
       </div>
 
@@ -93,7 +93,7 @@ export default function Hero({ utms }: { utms: { source: string | string[] | und
               onClick={() => trackEvent("clique_agendar_visita", { local: "hero" })}
               className="rounded-full bg-gold px-7 py-3.5 font-bold text-navy shadow-lg shadow-gold/25 transition-transform hover:scale-[1.03]"
             >
-              Comece a história do seu filho aqui 
+              Quero conhecer o Domba
             </a>
             {/*
             <a

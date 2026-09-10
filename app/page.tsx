@@ -28,11 +28,12 @@ export default async function Page({ searchParams }: PageProps) {
     <main>
       <Hero utms={utms} />
       <Methodology />
-      <Infrastructure />
+   
       <Suspense fallback={null}>
         <SegmentSelector />
       </Suspense>
       <Montessori />
+         <Infrastructure />
       <Testimonials />
       <Footer />
       <WhatsappButton />

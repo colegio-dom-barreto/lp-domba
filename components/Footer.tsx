@@ -22,6 +22,7 @@ export default function Footer() {
             matricula@colegiodombarreto.com.br · (19) 3232-4366
           </p>
           <p className="mt-1">Matrículas: (19) 3113-6780 (Whatsapp)</p>
+          
         </div>
         <div className="flex gap-4 text-sm">
           <a
@@ -44,6 +45,13 @@ export default function Footer() {
             className="hover:text-gold"
           >
             Youtube
+          </a>
+          <a
+            href="https://www.domba.com.br"
+            onClick={() => trackEvent("clique_rede_social", { rede: "site" })}
+            className="hover:text-gold"
+          >
+            Site Institucional
           </a>
         </div>
       </div>

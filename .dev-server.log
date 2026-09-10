@@ -2,131 +2,20 @@
 > domba-lp-matriculas@0.1.0 dev
 > next dev
 
-  ▲ Next.js 14.2.35
-  - Local:        http://localhost:3000
+▲ Next.js 16.3.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://172.29.96.1:3000
+- Environments: .env
+✓ Ready in 771ms
+✓ Running next.config.js took 61ms
 
- ✓ Starting...
- ✓ Ready in 6.5s
- ○ Compiling / ...
- ✓ Compiled / in 2.9s (548 modules)
- GET / 200 in 3253ms
- GET / 200 in 1378ms
- GET / 200 in 70ms
- ✓ Compiled in 523ms (548 modules)
- GET / 200 in 145ms
- GET / 200 in 78ms
- ✓ Compiled in 281ms (548 modules)
- ✓ Compiled in 289ms (548 modules)
- ✓ Compiled in 711ms (548 modules)
- ✓ Compiled in 225ms (548 modules)
- ✓ Compiled in 228ms (548 modules)
- ✓ Compiled in 172ms (548 modules)
- ✓ Compiled in 255ms (548 modules)
- ✓ Compiled in 233ms (548 modules)
- ✓ Compiled in 328ms (548 modules)
- ✓ Compiled in 246ms (548 modules)
- ✓ Compiled in 225ms (548 modules)
- ✓ Compiled in 350ms (548 modules)
- ✓ Compiled in 376ms (548 modules)
- ✓ Compiled in 295ms (548 modules)
- ✓ Compiled in 245ms (548 modules)
- ⨯ ./components/Hero.tsx
-Error: 
-  [31mx[0m Unexpected token `section`. Expected jsx identifier
-    ,-[[36;1;4mD:\domba-lp\components\Hero.tsx[0m:10:1]
- [2m10[0m | 
- [2m11[0m | export default function Hero() {
- [2m12[0m |   return (
- [2m13[0m |     <section className="relative overflow-hidden bg-navy-deep">
-    : [31;1m     ^^^^^^^[0m
- [2m14[0m |       {/* fundo: glows coloridos + grid de pontos, dão o clima "moderno" sem depender de imagem */}
- [2m15[0m |       <div aria-hidden className="pointer-events-none absolute inset-0">
- [2m16[0m |         <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-skyblue/30 blur-[110px]" />
-    `----
-
-Caused by:
-    Syntax Error
-
-Import trace for requested module:
-./components/Hero.tsx
-./app/page.tsx
- ○ Compiling /_error ...
- ✓ Compiled /_error in 6.8s (761 modules)
- GET / 200 in 5388ms
- ✓ Compiled in 820ms (773 modules)
- GET / 200 in 131ms
- ✓ Compiled in 351ms (773 modules)
- ✓ Compiled in 242ms (773 modules)
- ✓ Compiled in 515ms (773 modules)
- ✓ Compiled in 342ms (773 modules)
- ✓ Compiled in 317ms (773 modules)
- GET / 200 in 198ms
- ✓ Compiled in 3.8s (773 modules)
- GET / 200 in 285ms
- GET / 200 in 95ms
- GET / 200 in 66ms
- ✓ Compiled in 544ms (773 modules)
- GET / 200 in 161ms
- ✓ Compiled in 415ms (773 modules)
- GET / 200 in 554ms
- GET / 200 in 4799ms
- ○ Compiling /_not-found ...
- ✓ Compiled /_not-found in 1652ms (762 modules)
- GET /.well-known/appspecific/com.chrome.devtools.json 404 in 1995ms
- GET /_next/static/css/app/layout.css?v=1788482334637 404 in 2080ms
- GET / 404 in 55ms
- GET /.well-known/appspecific/com.chrome.devtools.json 404 in 30ms
- GET /_next/static/css/app/layout.css?v=1788482381327 404 in 57ms
- GET /_next/static/chunks/main-app.js?v=1788482381327 404 in 38ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 56ms
- GET /_next/static/chunks/app/layout.js 404 in 78ms
- GET / 404 in 79ms
- GET /.well-known/appspecific/com.chrome.devtools.json 404 in 44ms
- GET /_next/static/css/app/layout.css?v=1788482384580 404 in 59ms
- GET /_next/static/chunks/main-app.js?v=1788482384580 404 in 100ms
- GET /_next/static/chunks/app/layout.js 404 in 60ms
- GET /_next/static/chunks/app-pages-internals.js 404 in 64ms
- ✓ Compiled in 5.9s (773 modules)
- ✓ Compiled in 304ms (773 modules)
- ✓ Compiled in 387ms (773 modules)
- ✓ Compiled in 260ms (773 modules)
- ✓ Compiled in 737ms (773 modules)
- ✓ Compiled in 386ms (773 modules)
- ✓ Compiled in 369ms (773 modules)
- ✓ Compiled in 587ms (773 modules)
- ✓ Compiled in 820ms (773 modules)
- ✓ Compiled in 287ms (451 modules)
- ✓ Compiled in 472ms (773 modules)
-<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'D:\domba-lp\.next\cache\webpack\server-development\2.pack.gz_' -> 'D:\domba-lp\.next\cache\webpack\server-development\2.pack.gz'
-<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'D:\domba-lp\.next\cache\webpack\client-development\11.pack.gz_' -> 'D:\domba-lp\.next\cache\webpack\client-development\11.pack.gz'
-   Reload env: .env
- ✓ Compiled in 5.1s (773 modules)
-   Reload env: .env
- ✓ Compiled in 665ms (759 modules)
-   Reload env: .env
- ✓ Compiled in 269ms (759 modules)
-   Reload env: .env
- ✓ Compiled in 301ms (759 modules)
-   Reload env: .env
- ✓ Compiled in 2.6s (773 modules)
-   Reload env: .env
- ✓ Compiled in 718ms (759 modules)
-   Reload env: .env
- ✓ Compiled in 714ms (759 modules)
-   Reload env: .env
- ✓ Compiled in 190ms (759 modules)
-   Reload env: .env
- ✓ Compiled in 450ms (759 modules)
-   Reload env: .env
- ✓ Compiled in 383ms (759 modules)
-   Reload env: .env
- ✓ Compiled in 301ms (759 modules)
-   Reload env: .env
- ✓ Compiled in 8.1s (773 modules)
- ✓ Compiled in 612ms (773 modules)
-   Reload env: .env
-   Reload env: .env
- ✓ Compiled in 5.6s (759 modules)
- ✓ Compiled in 625ms (773 modules)
-<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'D:\domba-lp\.next\cache\webpack\server-development\1.pack.gz_' -> 'D:\domba-lp\.next\cache\webpack\server-development\1.pack.gz'
-<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'D:\domba-lp\.next\cache\webpack\client-development\0.pack.gz_' -> 'D:\domba-lp\.next\cache\webpack\client-development\0.pack.gz'
+ GET / 200 in 1106ms (next.js: 526ms, application-code: 580ms)
+ GET / 200 in 204ms (next.js: 10ms, application-code: 194ms)
+[browser] Image with src "/rafael-LP.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+✓ Compiled in 173ms
+ GET / 200 in 89ms (next.js: 32ms, application-code: 57ms)
+ GET / 200 in 194ms (next.js: 18ms, application-code: 176ms)
+[browser] Image with src "/capa/pedro-lp.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[?25h
