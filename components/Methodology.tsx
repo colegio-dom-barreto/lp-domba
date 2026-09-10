@@ -96,7 +96,7 @@ export default function Methodology() {
   return (
     <>
       <section className="bg-offwhite">
-        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-14 md:grid-cols-2 md:items-center">
+        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-14 md:grid-cols-2 md:items-start">
           <MethodologyCarousel />
           <div>
             <h2 className="font-display text-3xl leading-tight text-navy sm:text-4xl">
