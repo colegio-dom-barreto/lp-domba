@@ -11,7 +11,7 @@
  *    NEXT_PUBLIC_LEADS_ENDPOINT no .env do Next.js.
  */
 
-const NOTIFY_EMAIL = "secretaria@colegiodombarreto.com.br";
+const NOTIFY_EMAIL = "matricula@colegiodombarreto.com.br";
 
 function doPost(e) {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
@@ -26,6 +26,10 @@ function doPost(e) {
     body.aluno || "",
     body.serieAno || "",
     body.pagina || "",
+    body.utm_source || "",
+    body.utm_medium || "",
+    body.utm_campaign || "",
+    body.utm_content || "",
   ]);
 
   if (NOTIFY_EMAIL) {
@@ -40,7 +44,12 @@ function doPost(e) {
         `Aluno: ${body.aluno}\n` +
         `Segmento: ${body.segmento}\n` +
         `Ano/Série: ${body.serieAno}\n` +
-        `Página: ${body.pagina}\n`,
+        `Página: ${body.pagina}\n` +
+        `utm_content: ${body.utm_content}\n` +
+        `utm_campaign: ${body.utm_campaign}\n` +
+        `utm_medium: ${body.utm_medium}\n` +
+        `utm_source: ${body.utm_source}\n`,
+
     });
   }
 
