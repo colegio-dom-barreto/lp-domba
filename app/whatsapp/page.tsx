@@ -69,7 +69,7 @@ export default async function Page({ searchParams }: PageProps) {
         >
           <div className="rounded-3xl bg-white p-6 shadow-2xl sm:p-8">
             <h2 className="font-display text-2xl text-navy sm:text-3xl">
-              Receba mais informações
+              Comece a história do seu filho aqui 
             </h2>
             <p className="mt-1 text-sm text-charcoal/70">
               Preencha seus dados e a Central de Matrículas entrará em contato com você.
