@@ -4,6 +4,7 @@ Reconstrução da página `/matriculas-abertas-2` fora do WordPress, para rodar
 100% estática em CDN (Vercel) e aguentar tráfego de campanha sem depender do
 PHP/banco do WordPress.
 
+
 ## Atualização: campanha "Fortes por dentro. Livres para ir longe."
 
 - **Hero reconstruído** com a mesma mensagem e foto real da campanha (a foto
