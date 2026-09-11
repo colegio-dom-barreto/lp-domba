@@ -132,7 +132,7 @@ apps-script/    código do backend de leads (Google Apps Script)
 ## Analytics (GTM + GA4)
 
 O GTM continua carregado normalmente (`NEXT_PUBLIC_GTM_ID`, hoje
-`GTM-5C5S23PJ`) para tags de Ads/Meta Pixel/etc configuradas na própria
+`GTM-5V323LWV`) para tags de Ads/Meta Pixel/etc configuradas na própria
 interface do GTM.
 
 Além disso, o GA4 é carregado **direto no código** (`app/layout.tsx`), via
