@@ -30,6 +30,15 @@ const SEGMENTS: Record<string, { label: string; options: string[] }> = {
   },
 };
 
+const COMO_CONHECEU = [
+  "Google",
+  "Instagram",
+  "Facebook",
+  "Indicação de amigo ou familiar",
+  "Passei em frente à escola",
+  "Outro",
+];
+
 type Status = "idle" | "success" | "error";
 
 const SEGMENT_KEYS = Object.keys(SEGMENTS) as [
@@ -48,6 +57,12 @@ const leadSchema = z.object({
     .trim()
     .regex(/^\(\d{2}\) \d{4,5}-\d{4}$/, "Informe um celular válido."),
   aluno: z.string().trim().min(1, "Informe o nome do aluno."),
+  escolaOrigem: z.string().trim().min(1, "Informe a escola de origem."),
+  idade: z
+    .string()
+    .trim()
+    .regex(/^\d{1,2}$/, "Informe a idade do aluno."),
+  comoConheceu: z.string().min(1, "Selecione uma opção."),
 });
 
 // Aplica a máscara (XX) XXXXX-XXXX (ou XXXX-XXXX para fixo) enquanto o usuário digita.
@@ -98,6 +113,9 @@ export default function LeadForm({
       email: "",
       celular: "",
       aluno: "",
+      escolaOrigem: "",
+      idade: "",
+      comoConheceu: "",
     },
   });
 
@@ -129,6 +147,9 @@ export default function LeadForm({
       email: values.email,
       celular: values.celular,
       aluno: values.aluno,
+      escolaOrigem: values.escolaOrigem,
+      idade: values.idade,
+      comoConheceu: values.comoConheceu,
       serieAno: values.serieAno,
       origem: "LP matrículas",
       utm_source: utms.source,
@@ -208,7 +229,7 @@ export default function LeadForm({
           htmlFor={`${id}-serieAno`}
           className="block text-sm font-semibold uppercase text-navy"
         >
-          {segment === "infantil" ? "Idade" : "Ano/Série"}
+          {segment === "infantil" ? "Turma" : "Ano/Série"}
         </label>
         <select
           id={`${id}-serieAno`}
@@ -257,6 +278,48 @@ export default function LeadForm({
           error={errors.aluno}
           {...register("aluno")}
         />
+        <Field
+          id={`${id}-escolaOrigem`}
+          label="Escola de origem"
+          placeholder="Escola onde o aluno estuda hoje"
+          error={errors.escolaOrigem}
+          {...register("escolaOrigem")}
+        />
+        <Field
+          id={`${id}-idade`}
+          label="Idade do aluno"
+          type="text"
+          inputMode="numeric"
+          maxLength={2}
+          placeholder="Ex.: 7"
+          error={errors.idade}
+          {...register("idade")}
+        />
+        <div className="sm:col-span-2">
+          <label
+            htmlFor={`${id}-comoConheceu`}
+            className="block text-sm font-semibold uppercase text-navy"
+          >
+            Como nos conheceu?
+          </label>
+          <select
+            id={`${id}-comoConheceu`}
+            className="mt-1 w-full rounded-xs border border-navy/20 bg-white px-3 py-2 text-charcoal focus:border-red"
+            {...register("comoConheceu")}
+          >
+            <option value="">Selecione</option>
+            {COMO_CONHECEU.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </select>
+          {errors.comoConheceu?.message && (
+            <p role="alert" className="mt-1 text-xs text-red">
+              {errors.comoConheceu.message}
+            </p>
+          )}
+        </div>
       </div>
 
       <button

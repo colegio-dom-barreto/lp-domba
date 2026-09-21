@@ -1,7 +1,9 @@
 /**
  * COMO USAR:
  * 1. Crie uma Google Sheet nova. Na primeira linha, adicione os cabeçalhos:
- *    data | segmento | responsavel | email | celular | aluno | serieAno | pagina
+ *    data | segmento | responsavel | email | celular | aluno | serieAno | pagina |
+ *    utm_source | utm_medium | utm_campaign | utm_content | escolaOrigem | idade |
+ *    comoConheceu
  * 2. Extensões > Apps Script. Cole este código substituindo o padrão.
  * 3. Troque NOTIFY_EMAIL abaixo pelo e-mail que deve receber cada lead.
  * 4. Implantar > Nova implantação > tipo "App da Web".
@@ -30,6 +32,9 @@ function doPost(e) {
     body.utm_medium || "",
     body.utm_campaign || "",
     body.utm_content || "",
+    body.escolaOrigem || "",
+    body.idade || "",
+    body.comoConheceu || "",
   ]);
 
   if (NOTIFY_EMAIL) {
@@ -43,6 +48,9 @@ function doPost(e) {
         `Celular: ${body.celular}\n` +
         `Aluno: ${body.aluno}\n` +
         `Segmento: ${body.segmento}\n` +
+        `Idade do aluno: ${body.idade}\n` +
+        `Escola de origem: ${body.escolaOrigem}\n` +
+        `Como nos conheceu: ${body.comoConheceu}\n` +
         `Ano/Série: ${body.serieAno}\n` +
         `Página: ${body.pagina}\n` +
         `utm_content: ${body.utm_content}\n` +
