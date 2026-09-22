@@ -58,10 +58,10 @@ const leadSchema = z.object({
     .regex(/^\(\d{2}\) \d{4,5}-\d{4}$/, "Informe um celular válido."),
   aluno: z.string().trim().min(1, "Informe o nome do aluno."),
   escolaOrigem: z.string().trim().min(1, "Informe a escola de origem."),
-  idade: z
+  dataNascimento: z
     .string()
     .trim()
-    .regex(/^\d{1,2}$/, "Informe a idade do aluno."),
+    .regex(/^\d{2}\/\d{2}\/\d{4}$/, "Informe a data de nascimento do aluno."),
   comoConheceu: z.string().min(1, "Selecione uma opção."),
 });
 
@@ -74,6 +74,14 @@ function formatPhone(value: string) {
     return `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
   }
   return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+}
+
+// Aplica a máscara DD/MM/AAAA enquanto o usuário digita.
+function formatDate(value: string) {
+  const digits = value.replace(/\D/g, "").slice(0, 8);
+  if (digits.length <= 2) return digits;
+  if (digits.length <= 4) return `${digits.slice(0, 2)}/${digits.slice(2)}`;
+  return `${digits.slice(0, 2)}/${digits.slice(2, 4)}/${digits.slice(4)}`;
 }
 
 type FormValues = z.infer<typeof leadSchema>;
@@ -114,7 +122,7 @@ export default function LeadForm({
       celular: "",
       aluno: "",
       escolaOrigem: "",
-      idade: "",
+      dataNascimento: "",
       comoConheceu: "",
     },
   });
@@ -122,6 +130,8 @@ export default function LeadForm({
   const segment = useWatch({ control, name: "segmento" });
 
   const { onChange: celularOnChange, ...celularField } = register("celular");
+  const { onChange: dataNascimentoOnChange, ...dataNascimentoField } =
+    register("dataNascimento");
 
   useEffect(() => {
     setValue("serieAno", SEGMENTS[segment].options[0]);
@@ -148,7 +158,7 @@ export default function LeadForm({
       celular: values.celular,
       aluno: values.aluno,
       escolaOrigem: values.escolaOrigem,
-      idade: values.idade,
+      idade: values.dataNascimento,
       comoConheceu: values.comoConheceu,
       serieAno: values.serieAno,
       origem: "LP matrículas",
@@ -286,14 +296,18 @@ export default function LeadForm({
           {...register("escolaOrigem")}
         />
         <Field
-          id={`${id}-idade`}
-          label="Idade do aluno"
+          id={`${id}-dataNascimento`}
+          label="Data de nascimento do aluno"
           type="text"
           inputMode="numeric"
-          maxLength={2}
-          placeholder="Ex.: 7"
-          error={errors.idade}
-          {...register("idade")}
+          maxLength={10}
+          placeholder="DD/MM/AAAA"
+          error={errors.dataNascimento}
+          {...dataNascimentoField}
+          onChange={(e) => {
+            e.target.value = formatDate(e.target.value);
+            dataNascimentoOnChange(e);
+          }}
         />
         <div className="sm:col-span-2">
           <label
