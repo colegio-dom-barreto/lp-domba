@@ -84,7 +84,7 @@ export default function Hero({ utms }: { utms: { source: string | string[] | und
           </h1>
 
           <p className="mt-5 max-w-md text-base text-white/80 sm:text-lg">
-            Há 73 anos, o Domba forma pessoas que sabem onde querem chegar, e que chegam lá com integridade e valores. Da Educação Infantil ao Ensino Médio, em Campinas.
+            Há 73 anos, o Domba forma pessoas que sabem aonde querem chegar e que chegam lá com integridade e valores. Da Educação Infantil ao Ensino Médio, em Campinas.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
