@@ -3,7 +3,7 @@ import { BookOpen, HeartHandshake, Trophy, Users, Church } from "lucide-react";
 
 const BULLETS = [
   { icon: BookOpen, text: "Excelência acadêmica com filosofia montessoriana" },
-  { icon: HeartHandshake, text: "Acolhimento: respeito ao estudante, seu ritmo e características" },
+  { icon: HeartHandshake, text: "Acolhimento à individualidade de cada estudante" },
   { icon: Trophy, text: "Diversidade de atividades esportivas e culturais" },
   { icon: Users, text: "Desenvolvimento do protagonismo, autonomia e cooperação" },
   { icon: Church, text: "Valores cristãos e espiritualidade" },
