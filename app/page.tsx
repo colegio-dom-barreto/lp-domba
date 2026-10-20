@@ -9,6 +9,7 @@ import Programs from "@/components/Programs";
 import Testimonials from "@/components/Testimonials";
 import WhatsappButton from "@/components/WhatsappButton";
 import Footer from "@/components/Footer";
+import { ResultadoSection } from "@/components/ResultadoSection";
 
 export type PageProps = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
@@ -33,6 +34,7 @@ export default async function Page({ searchParams }: PageProps) {
         <SegmentSelector />
       </Suspense>
       <Montessori />
+            <ResultadoSection />
          <Infrastructure />
       <Testimonials />
       <Footer />
